@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
+	<classpathentry kind="src" path="src/main/groovy"/>
+	<classpathentry kind="src" path="src/test/groovy"/>
+	<classpathentry kind="src" path="src/functionalTest/groovy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/com.google.appengine/appengine-api-1.0-sdk/1.6.6/jar/7b98096234e729ae8c8230d19b84c5e9895260dd/appengine-api-1.0-sdk-1.6.6.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/com.google.appengine/appengine-api-labs/1.6.6/jar/b11832598e045e12c71b47f316ae6bab796a7245/appengine-api-labs-1.6.6.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.codehaus.groovy/groovy-all/1.8.6/source/2ac423ad404db3e3d9053c626d4c15a84cd18b73/groovy-all-1.8.6-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.codehaus.groovy/groovy-all/1.8.6/jar/96a26bfa6e5aea2e3c46df44a19de93a2acd2366/groovy-all-1.8.6.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.gaelyk/gaelyk/1.2/source/309754c8331d340f89f2fe3d14d98ac7e3393477/gaelyk-1.2-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.gaelyk/gaelyk/1.2/jar/4a7e0fd0df657975718f0b70e91343c393d3089f/gaelyk-1.2.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.gaelyk/gaelyk-spock/0.3.0.1/source/46263eed4a32ec70a72d435e5d67da28e43016e5/gaelyk-spock-0.3.0.1-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.gaelyk/gaelyk-spock/0.3.0.1/jar/dae95bf11402358be2ac0d18f07be37f2a7cc5/gaelyk-spock-0.3.0.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/com.google.appengine/appengine-api-stubs/1.6.6/jar/6c68c30d7feaabecfedb7393a90aae4ea7699cdb/appengine-api-stubs-1.6.6.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/com.google.appengine/appengine-testing/1.6.6/jar/3d34784fb48b2b91072c538e16590974d8012556/appengine-testing-1.6.6.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/javax.servlet/servlet-api/2.5/source/21599814ad9a605b86f3e6381571beccd861a32/servlet-api-2.5-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/javax.servlet/servlet-api/2.5/jar/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.objenesis/objenesis/1.2/source/71909ee0264af468fe26f0a2467d01bcb85f6fa9/objenesis-1.2-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.objenesis/objenesis/1.2/jar/bfcb0539a071a4c5a30690388903ac48c0667f2a/objenesis-1.2.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.hamcrest/hamcrest-core/1.2/source/e9be1c6a53b4d4e7564756e924a9fa8b1661ec6a/hamcrest-core-1.2-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.hamcrest/hamcrest-core/1.2/jar/44d12ff84e43c7d0539131f75c92f2f88dba6549/hamcrest-core-1.2.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/junit/junit-dep/4.9/source/84b903feddab2bd58f5ab2fc0c5c636df42df74d/junit-dep-4.9-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/junit/junit-dep/4.9/jar/1013627e3993319870863a020034004717505815/junit-dep-4.9.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.spockframework/spock-core/0.6-groovy-1.8/source/e86c73c53149bbd8a260f7a486c4d9667be5b9d2/spock-core-0.6-groovy-1.8-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.spockframework/spock-core/0.6-groovy-1.8/jar/5c1bfb5058c3659ddc206052601704ccd30133a5/spock-core-0.6-groovy-1.8.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/antlr/antlr/2.7.7/jar/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/asm/asm/3.2/jar/9bc1511dec6adf302991ced13303e4140fdf9ab7/asm-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/asm/asm-tree/3.2/jar/cd792e29c79d170c5d0bdd05adf5807cf6875c90/asm-tree-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/asm/asm-commons/3.2/jar/e7a19b8c60589499e35f5d2068d09013030b8891/asm-commons-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/asm/asm-util/3.2/jar/37ebfdad34d5f1f45109981465f311bbfbe82dcf/asm-util-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/asm/asm-analysis/3.2/jar/c624956db93975b7197699dcd7de6145ca7cf2c8/asm-analysis-3.2.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.codehaus.groovy/groovy/1.8.6/source/2ac423ad404db3e3d9053c626d4c15a84cd18b73/groovy-1.8.6-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/org.codehaus.groovy/groovy/1.8.6/jar/553ca93e0407c94c89b058c482a404427ac7fc72/groovy-1.8.6.jar" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/cglib/cglib-nodep/2.2/source/962f2bbd66901a9d67b0bb3c8c4a64ce6de0a8c4/cglib-nodep-2.2-sources.jar" kind="lib" path="C:/Users/lsabin/.gradle/caches/artifacts-8/filestore/cglib/cglib-nodep/2.2/jar/59afed7ab65e7ec6585d5bc60556c3cbd203532b/cglib-nodep-2.2.jar" exported="true"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value="/src/main/webapp/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value="/src/main/webapp/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+</classpath>
