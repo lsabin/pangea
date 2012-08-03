@@ -57,6 +57,8 @@ gae {
     optimizeWar = true
 }
 
+
+
 gaeExplodeWar.dependsOn gaelykPrecompileGroovlet
 gaeExplodeWar.dependsOn gaelykPrecompileTemplate
 
@@ -69,9 +71,31 @@ task copyRuntimeLibraries(type: Sync) {
     description = "Copies runtime libraries to $webAppLibDirName."
     from configurations.runtime
     into webAppLibDirName
+
+
+    copy {
+      from 'build/classes/main'
+      into "src/main/webapp/WEB-INF/classes"
+      include '*.class'
+    }
+
 }
 
+
+task copyClasses(type: Sync) {
+
+    copy {
+      from 'build/classes/main'
+      into "src/main/webapp/WEB-INF/classes"
+      include 'com/**/*.class'
+    }
+
+}
+
+    
+
 gaeRun.dependsOn copyRuntimeLibraries
+gaeRun.dependsOn copyClasses
 
 idea {
     project {
