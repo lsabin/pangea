@@ -16,9 +16,9 @@ buildscript {
 
     dependencies {
         classpath 'org.gradle.api.plugins:gradle-gae-plugin:0.7'
-        classpath 'org.gradle.api.plugins:gradle-gaelyk-plugin:0.3.2'
+        classpath 'org.gradle.api.plugins:gradle-gaelyk-plugin:0.3.3'
         classpath 'eu.appsatori:gradle-fatjar-plugin:0.1.1'
-		  files('D:/lsc/gaelyk/gaelyk-template-project-1.2/src/main/webapp/WEB-INF/lib/objectify-2.2.1.jar', 'D:/lsc/gaelyk/gaelyk-template-project-1.2/src/main/webapp/WEB-INF/lib/obgaektify-0.3.jar')
+        
     }
 }
 
@@ -33,6 +33,7 @@ dependencies {
             "com.google.appengine:appengine-api-labs:$gaeVersion",
             'org.codehaus.groovy:groovy-all:1.8.6'
     compile 'org.gaelyk:gaelyk:1.2'
+    compile fileTree (dir: 'D:/lsc/gaelyk/gaelyk-template-project-1.2/src/main/webapp/WEB-INF/lib', includes: ['*.jar']) 
     
     /** 
      * To add binary plugin just declare it as a dependency. For example,
