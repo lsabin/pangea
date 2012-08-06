@@ -3,6 +3,8 @@
 <%
 def erro = request.getAttribute('erro') 
 def mensaxeExito = request.getAttribute('mensaxe')
+
+def notas = request.getAttribute('notas')
 %>
 
 
@@ -19,6 +21,14 @@ ${erro?:''}
 ${mensaxeExito?:''}
 </div>
 <% } %>
+
+
+<% if (notas) { %>
+<div class="alert alert-success">
+${notas?:''}
+</div>
+<% } %>
+
 
 
 <div class="hero-unit center">
