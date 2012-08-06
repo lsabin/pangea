@@ -58,7 +58,7 @@ create = {
 			
 		} catch (Exception e) {
 			request.erro = "Produciuse un erro inesperado!"
-			forward "/erro.gtpl"	
+			forward "/WEB-INF/pages/registro.gtpl"	
 		}
 
 
@@ -102,7 +102,7 @@ boolean usuarioExistente(String nombreUsuario) {
 def enviaCorreo(String correo, def activacion, String nomeCompleto) {
 	
 	
-	mail.send sender: "info.ospobos@gmail.com",
+	mail.send sender: "sabin.leandro@gmail.com",
 	to: correo,
 	subject: "Confirmacion de rexistro",
 	textBody: """
