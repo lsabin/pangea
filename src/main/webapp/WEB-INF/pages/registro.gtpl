@@ -35,15 +35,49 @@ ${mensaxeExito?:''}
   <fieldset>
     <legend>Legend text</legend>
     <div class="control-group">
-      <label class="control-label" for="nombre">Nombre</label>
+      
+      <label class="control-label" for="nombre">Nombre</label> 
       <div class="controls">
         <input type="text" class="input-xlarge" id="nombre" name="nombre">
         <p class="help-block">Supporting help text</p>
-            <input id="submit" class="btn btn-primary" name="submit" type="submit" 
-          value="Crea usuario"/>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      
+      <label class="control-label" for="usuario">Nombre usuario</label> 
+      <div class="controls">
+        <input type="text" class="input-xlarge" id="usuario" name="usuario">
         
       </div>
     </div>
+
+
+    <div class="control-group">
+      
+      <label class="control-label" for="contrasinal">Contrasinal</label> 
+      <div class="controls">
+        <input type="text" class="input-xlarge" id="contrasinal" name="contrasinal">
+        
+      </div>
+    </div>
+
+    <div class="control-group">
+      
+      <label class="control-label" for="correo">Correo</label> 
+      <div class="controls">
+        <input type="text" class="input-xlarge" id="correo" name="correo">
+      </div>
+    </div>        
+
+    <div class="control-group">
+      <div class="controls">
+          <input id="submit" class="btn btn-primary" name="submit" type="submit" value="Crea usuario"/>
+      </div>
+    </div>        
+
+
   </fieldset>
 </form>	
 	</div>
