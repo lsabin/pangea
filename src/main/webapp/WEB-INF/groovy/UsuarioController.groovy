@@ -49,7 +49,7 @@ create = {
 				enviaCorreo(correo,activacion, nombre)
 				
 				request.mensaxe="Usuario $usuario creado."
-				request.contido="Recibirás un correo dirixido a ${correo} para activar o teu usuario."	
+				request.notas="Recibirás un correo dirixido a ${correo} para activar o teu usuario."	
 				forward '/WEB-INF/pages/registro.gtpl'	
 			} else {
 				request.erro = "O usuario $usuario xa existe!"
