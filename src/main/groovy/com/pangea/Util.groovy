@@ -2,6 +2,9 @@ package com.pangea;
 
 import com.google.appengine.api.datastore.*
 import static com.google.appengine.api.datastore.FetchOptions.Builder.*
+import org.apache.commons.codec.binary.Hex
+import java.io.UnsupportedEncodingException
+import java.security.*
 
 
 class Util {
@@ -39,6 +42,15 @@ class Util {
     		return null
     	}
     	
-    }    
+    }   
+
+
+     String codifica(String clave) throws NoSuchAlgorithmException , UnsupportedEncodingException {
+        MessageDigest digest = MessageDigest.getInstance(algoritmo)
+        digest.update(clave.getBytes(codificacion))
+        byte[] raw = digest.digest()
+        return new String(Hex.encodeHex(raw))
+    
+    }
         
 }
