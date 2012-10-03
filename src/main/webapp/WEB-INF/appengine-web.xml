@@ -1,5 +1,5 @@
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-    <application>leandroholamundo</application>
+    <application>panesgeo</application>
     
     <version>1</version>
 
