@@ -40,6 +40,9 @@ create = {
 				//crea o usuario na db
 		        def u = new Usuario()
 		        u.nombre = nombre
+		        u.correo = correo
+		        u.contrasinal = contrasinalCodificado
+		        u.usuario = usuario
 		        u.store()
 
 		        log.info "usuario creado............"
@@ -49,15 +52,16 @@ create = {
 				enviaCorreo(correo,activacion, nombre)
 				
 				request.mensaxe="Usuario $usuario creado."
-				request.notas="Recibirás un correo dirixido a ${correo} para activar o teu usuario."	
-				forward '/WEB-INF/pages/registro.gtpl'	
+				request.notas="Recibirás un correo en tu cuenta ${correo} para activar tu usuario."	
+				forward '/WEB-INF/pages/confirmacion.gtpl'	
 			} else {
-				request.erro = "O usuario $usuario xa existe!"
+				request.erro = "El usuario $usuario ya existe!"
 				forward '/WEB-INF/pages/registro.gtpl'				
 			}
 			
 		} catch (Exception e) {
-			request.erro = "Produciuse un erro inesperado!"
+			request.erro = "Hemos tenido un error que no estaba previsto!" 
+			log.error "Error:  ${e.getMessage()}"
 			forward "/WEB-INF/pages/registro.gtpl"	
 		}
 
@@ -70,6 +74,8 @@ create = {
 
 list = {
     def usuarios = Usuario.search(filter:[:])
+
+
     request.usuarios = usuarios
 }
 
@@ -80,7 +86,7 @@ listado = {
     html.select(id:'actividad', name:'actividad') {
         usuarios.eachWithIndex {tipo,i->
             if (tipo) {
-                option value:"${tipo.key?.id}" ,"${tipo.nombre.toString()}"
+                option value:"${tipo.key?.id}" ,"${tipo.nombre.toString()} - ${tipo.usuario}"
             }
         }
     
@@ -95,24 +101,32 @@ this."$action".call()
 
 
 boolean usuarioExistente(String nombreUsuario) {
-	return false
+
+	def usuarios = Usuario.search(filter:["usuario ==": nombreUsuario])
+
+	if (usuarios) {
+		return true 
+	} else {
+		return false	
+	}
+	
 }
 
 
 def enviaCorreo(String correo, def activacion, String nomeCompleto) {
 	
 	
-	mail.send sender: "sabin.leandro@gmail.com",
+	mail.send sender: "info.ospobos@gmail.com",
 	to: correo,
-	subject: "Confirmacion de rexistro",
+	subject: "Confirmacion de registro en pangea",
 	textBody: """
 		Hola ${nomeCompleto},
 		
-		Tes que activar a tua conta na seguinte ligazon:
+		Tienes que activar tu nueva cuenta en el siguiente enlace:
 		
 		http://ospobos.appspot.com/activa/$activacion
 		
-		Saudos
+		Saludos
 		"""
 	
 }
