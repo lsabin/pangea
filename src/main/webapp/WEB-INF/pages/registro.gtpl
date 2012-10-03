@@ -7,9 +7,15 @@ def mensaxeExito = request.getAttribute('mensaxe')
 def notas = request.getAttribute('notas')
 %>
 
+<div class="hero-unit center">
+  <p>
+  Registra tu usuario
+  </p>
+  
+</div>
 
 <% if (erro) { %>
-<div class="erro">
+<div class="alert alert-error">
 ${erro?:''}
 </div>
 <% } %>
@@ -31,16 +37,11 @@ ${notas?:''}
 
 
 
-<div class="hero-unit center">
-	<p>
-	Registra tu usuario
-	</p>
-	
-</div>
+
 
 <div class="row">
 	<div class="span12">
-<form class="form-horizontal" method="POST" action="/usuarios/create">
+<form id="formulario" class="form-horizontal" method="POST" action="/usuarios/create">
 
   <fieldset>
     <legend>Legend text</legend>
@@ -49,7 +50,6 @@ ${notas?:''}
       <label class="control-label" for="nombre">Nombre</label> 
       <div class="controls">
         <input type="text" class="input-xlarge" id="nombre" name="nombre">
-        <p class="help-block">Supporting help text</p>
       </div>
     </div>
 
@@ -66,12 +66,20 @@ ${notas?:''}
 
     <div class="control-group">
       
-      <label class="control-label" for="contrasinal">Contrasinal</label> 
+      <label class="control-label" for="contrasinal">Contraseña</label> 
       <div class="controls">
-        <input type="text" class="input-xlarge" id="contrasinal" name="contrasinal">
-        
-      </div>
+        <input type="password" class="input-xlarge" id="contrasinal" name="contrasinal">
+       </div>
     </div>
+
+    <div class="control-group">
+      
+      <label class="control-label" for="confirmaclave">Confirma contraseña</label> 
+      <div class="controls">
+        <input type="password" class="input-xlarge" id="confirmaclave" name="confirmaclave">
+       </div>
+    </div>
+
 
     <div class="control-group">
       
@@ -96,5 +104,5 @@ ${notas?:''}
 
 
 
-<% include '/WEB-INF/includes/footer.gtpl' %>
+<% include '/WEB-INF/includes/footer-validacion.gtpl' %>
 
