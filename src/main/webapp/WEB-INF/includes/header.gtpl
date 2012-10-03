@@ -6,9 +6,7 @@
   <link rel="icon" href="/images/gaelyk-small-favicon.png" type="image/png">
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.responsive.min.css" />
-  <script type="text/javascript" src="/js/jquery-1.7.2.min.js">
-  </script>
-  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/estilo-validacion.css" />
   <style type="text/css">
       body {
           padding-top: 60px;
@@ -30,7 +28,9 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="${request.servletPath == '/WEB-INF/pages/index.gtpl' ? 'active' : ''}"><a href="/">Home</a></li>
-					<li class="${request.servletPath == '/WEB-INF/pages/datetime.gtpl' ? 'active' : ''}"><a href="/datetime">Current Time</a></li>
+
+					<li class="${request.servletPath == '/WEB-INF/pages/registro.gtpl' ? 'active' : ''}"><a href="/registro">REGISTRATE</a></li>
+
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
