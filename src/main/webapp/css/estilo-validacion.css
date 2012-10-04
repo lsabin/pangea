@@ -5,7 +5,7 @@
 label.valid {
 		  width: 24px;
 		  height: 24px;
-		  background: url(../img/valid.png) center center no-repeat;
+		  background: url(/img/valid.png) center center no-repeat;
 		  display: inline-block;
 		  text-indent: -9999px;
 		}

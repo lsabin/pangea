@@ -5,15 +5,16 @@
 //	
 //	Free for your use -- No warranties, no guarantees!
 //
+// Validate
+// http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+// http://docs.jquery.com/Plugins/Validation/
+// http://docs.jquery.com/Plugins/Validation/validate#toptions
 
-$(document).ready(function(){
 
-	// Validate
-	// http://bassistance.de/jquery-plugins/jquery-plugin-validation/
-	// http://docs.jquery.com/Plugins/Validation/
-	// http://docs.jquery.com/Plugins/Validation/validate#toptions
+jQuery(function(){
+
 	
-		$('#formulario').validate({
+		jQuery('#formulario').validate({
 	    rules: {
 	      nombre: {
 	        minlength: 2,
@@ -30,7 +31,7 @@ $(document).ready(function(){
 	      contrasinal: {
 	        minlength: 4,
 	        required: true
-	      }
+	      },
 
 	      confirmaclave: {
 	      	required: true,
@@ -48,13 +49,13 @@ $(document).ready(function(){
             },
             confirmaclave: {
                 required:"Este campo es obligatorioo",
-                equalTo:"No coincide las contraseñas"
+                equalTo:"No coinciden las contraseñas"
             }
         },
 
 
 	    highlight: function(label) {
-	    	$(label).closest('.control-group').removeClass('success').addClass('error');
+	    	jQuery(label).closest('.control-group').removeClass('success').addClass('error');
 	    },
 	    success: function(label) {
 	    	label

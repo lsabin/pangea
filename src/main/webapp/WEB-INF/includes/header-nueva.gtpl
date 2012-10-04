@@ -21,6 +21,9 @@
   </style>
 </head>
 <body>
+<div id="wrapper">
+
+
    <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
@@ -50,4 +53,6 @@
 	</div>
 	</div>
 
-    <div class="container">
+
+<div id="main">
+<!--<div class="container">-->

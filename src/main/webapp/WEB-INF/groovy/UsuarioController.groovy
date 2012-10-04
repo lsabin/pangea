@@ -1,7 +1,8 @@
-import com.model.Usuario
 import com.googlecode.objectify.ObjectifyService
 import com.pangea.Util
 import com.pangea.util.Codificador
+import com.model.Usuario
+
 
 def usuario = params.usuario
 def contrasinal = params.contrasinal
@@ -43,16 +44,22 @@ create = {
 		        u.correo = correo
 		        u.contrasinal = contrasinalCodificado
 		        u.usuario = usuario
+		        u.claveActivacion = activacion
 		        u.store()
 
 		        log.info "usuario creado............"
 				
 				
-				//envia un email de confirmacion
-				enviaCorreo(correo,activacion, nombre)
+
 				
 				request.mensaxe="Usuario $usuario creado."
-				request.notas="Recibirás un correo en tu cuenta ${correo} para activar tu usuario."	
+				//request.notas="Recibirás un correo en tu cuenta ${correo} para activar tu usuario."	
+
+				mensajeActivacion = "${i18n.mensajeActivacion(correo)}"
+				request.notas = mensajeActivacion
+
+
+
 				forward '/WEB-INF/pages/confirmacion.gtpl'	
 			} else {
 				request.erro = "El usuario $usuario ya existe!"
@@ -60,12 +67,14 @@ create = {
 			}
 			
 		} catch (Exception e) {
-			request.erro = "Hemos tenido un error que no estaba previsto!" 
-			log.error "Error:  ${e.getMessage()}"
+			request.erro = "Se ha producido un error que no estaba previsto!" 
+			log.severe "Error:  ${e.getMessage()}"
 			forward "/WEB-INF/pages/registro.gtpl"	
 		}
 
 
+		//envia un email de confirmacion
+		enviaCorreo(correo,activacion, nombre)
     
     }
     
@@ -96,6 +105,89 @@ listado = {
 }
 
 
+login = {
+
+	if (usuario && contrasinal) {
+
+		usuarioEncontrado = buscaUsuario(usuario) 
+
+
+
+		if (usuarioEncontrado) {
+
+			log.info "Encontrado el usuario $usuario"
+
+
+			if (usuarioEncontrado.activo) {
+
+				def sesion = request.getSession(true)
+				
+				String contrasinalCodificado = Codificador.codifica(contrasinal)
+				
+				if (contrasinalCodificado.equals(usuarioEncontrado.contrasinal)) {
+					sesion.setAttribute('usuario',usuarioEncontrado.usuario)
+					request.mensaxe = "Benvido, ${usuarioEncontrado.nombre}"
+
+					forward '/WEB-INF/pages/index.gtpl'	
+
+				} else {
+					request.erro ="La clave no es valida"
+					forward '/WEB-INF/pages/login.gtpl'	
+				}
+
+
+			} else {
+
+				log.info "El usuario $usuario no fue activado."
+
+				request.erro = "El usuario $usuario no fue activado."
+				forward '/WEB-INF/pages/login.gtpl'				
+
+			}
+
+
+		} else {
+			log.info "NO existe el usuario $usuario"	
+			request.erro="Non existe ese usuario!"
+			forward '/WEB-INF/pages/login.gtpl'				
+		}
+
+
+	} else {
+		request.erro="Tes que indicar o teu usuario e contrasinal!"
+		forward '/WEB-INF/pages/login.gtpl'	
+	}
+
+}
+
+
+activa = {
+
+	if (params['key']) {
+		
+		def activacion = params['key']
+		
+		Usuario usuarioParaActivar = buscaUsuarioPorActivacion(activacion)
+		
+		if (usuarioParaActivar) {
+			
+			usuarioParaActivar.activo = true
+			usuarioParaActivar.store()
+
+			request.mensaxe = "Usuario ${usuarioParaActivar.usuario} activado."
+			request.contido = """Ya puedes hacer login <a href='/login'>aqui</a>"""	
+			forward '/WEB-INF/pages/exito.gtpl'	
+		} else {
+			request.erro = "Non foi atopado ningun usuario con esa chave de activacion!"
+			forward '/WEB-INF/pages/index.gtpl'
+		}
+		
+	}
+
+
+}
+
+
 
 this."$action".call()
 
@@ -108,6 +200,32 @@ boolean usuarioExistente(String nombreUsuario) {
 		return true 
 	} else {
 		return false	
+	}
+	
+}
+
+
+Usuario buscaUsuario(String nombreUsuario) {
+
+	def usuarios = Usuario.search(filter:["usuario ==": nombreUsuario])
+
+	if (usuarios) {
+		return usuarios[0]
+	} else {
+		return null
+	}
+	
+}
+
+
+Usuario buscaUsuarioPorActivacion(String claveActivacion) {
+
+	def usuarios = Usuario.search(filter:["claveActivacion ==": claveActivacion])
+
+	if (usuarios) {
+		return usuarios[0]
+	} else {
+		return null
 	}
 	
 }

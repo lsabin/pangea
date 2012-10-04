@@ -10,4 +10,6 @@ class Usuario extends ObgaektifiableLongId implements Serializable
 	String usuario
 	String contrasinal
 	String correo
+	Boolean activo = false
+	String claveActivacion
 }
