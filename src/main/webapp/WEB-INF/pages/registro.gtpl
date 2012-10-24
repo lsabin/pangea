@@ -56,7 +56,7 @@ ${notas?:''}
 
     <div class="control-group">
       
-      <label class="control-label" for="usuario">Nombre usuario</label> 
+      <label class="control-label" for="usuario">${i18n['nombre.usuario']}</label>
       <div class="controls">
         <input type="text" class="input-xlarge" id="usuario" name="usuario">
         
@@ -74,7 +74,7 @@ ${notas?:''}
 
     <div class="control-group">
       
-      <label class="control-label" for="confirmaclave">Confirma contraseña</label> 
+      <label class="control-label" for="confirmaclave">${i18n['confirma.clave']}</label>
       <div class="controls">
         <input type="password" class="input-xlarge" id="confirmaclave" name="confirmaclave">
        </div>
